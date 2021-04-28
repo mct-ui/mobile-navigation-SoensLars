@@ -442,28 +442,6 @@ a:focus {
 \*------------------------------------*/
 
 /*
-    Component: Logo
-    ---
-    Website main logo
-*/
-
-.c-logo {
-    height: 32px;
-    display: flex;
-    align-items: center;
-}
-
-.c-logo__symbol {
-    height: 100%;
-}
-
-@media (min-width: 768px) {
-    .c-logo {
-        height: 40px;
-    }
-}
-
-/*
     Component: mobile nav
     ---
     Dedicated mobile nav component
@@ -475,52 +453,65 @@ a:focus {
     right: 0;
     left: 0;
     height: 100vh;
-    opacity: 0;
     pointer-events: none;
-    transition: opacity .25s;
 }
-
+  
 .has-mobile-nav .c-mobile-nav {
-    opacity: 1;
     pointer-events: auto;
 }
-
+  
 .c-mobile-nav__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 16px;
 }
-
+  
 .c-mobile-nav__bg {
-
+    position: absolute;
+    position: 0 0 0 0;
+    background-color: #202024;
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
-
+  
 .has-mobile-nav .c-mobile-nav__bg {
-
+    opacity: 0.5;
 }
-
+  
 .c-mobile-nav__body {
     position: relative;
     padding: 24px;
     height: 100vh;
     width: 100vw;
     background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
 }
-
+  
 .has-mobile-nav .c-mobile-nav__body {
+    transform: translateX(0);
 }
-
+  
+.c-page {
+    transform: translateX(0);
+    transition: transform 0.25s ease;
+}
+  
+.has-mobile-nav .c-page {
+    transform: translateX(25%);
+}
+  
 @media (min-width: 768px) {
     .c-mobile-nav__body {
-        padding: 48px;
+      padding: 48px;
     }
 }
-
+  
 @media (min-width: 992px) {
     /* Hide the mobile nav on larger viewports even whent it's open on smaller screens */
     .c-mobile-nav {
-        display: none !important;
+      display: none !important;
     }
 }
 
@@ -557,6 +548,29 @@ a:focus {
         display: none;
     }
 }
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+  
+.c-logo__symbol {
+    height: 100%;
+}
+  
+@media (min-width: 768px) {
+    .c-logo {
+      height: 40px;
+    }
+}
+  
 
 /*
     Component: footer

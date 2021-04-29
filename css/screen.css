@@ -442,6 +442,28 @@ a:focus {
 \*------------------------------------*/
 
 /*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+  
+.c-logo__symbol {
+    height: 100%;
+}
+  
+@media (min-width: 768px) {
+    .c-logo {
+      height: 40px;
+    }
+}
+
+/*
     Component: mobile nav
     ---
     Dedicated mobile nav component
@@ -486,7 +508,7 @@ a:focus {
     width: 100vw;
     background-color: #fff;
     transform: translateX(-100%);
-    transition: transform 0.25s ease;
+    transition: transform 1.25s ease;
 }
   
 .has-mobile-nav .c-mobile-nav__body {
@@ -495,7 +517,7 @@ a:focus {
   
 .c-page {
     transform: translateX(0);
-    transition: transform 0.25s ease;
+    transition: transform 1.25s ease;
 }
   
 .has-mobile-nav .c-page {
@@ -546,28 +568,6 @@ a:focus {
 
     .c-header__mobile-nav-trigger {
         display: none;
-    }
-}
-
-/*
-    Component: Logo
-    ---
-    Website main logo
-*/
-
-.c-logo {
-    height: 32px;
-    display: flex;
-    align-items: center;
-}
-  
-.c-logo__symbol {
-    height: 100%;
-}
-  
-@media (min-width: 768px) {
-    .c-logo {
-      height: 40px;
     }
 }
   
